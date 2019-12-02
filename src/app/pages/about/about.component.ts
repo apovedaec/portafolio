@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoPaginaService } from '../../services/info-pagina.service';
+import { InfoEquipo } from 'src/app/interfaces/info-equipo.interface';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _ips: InfoPaginaService ) {}
 
   ngOnInit() {
   }
