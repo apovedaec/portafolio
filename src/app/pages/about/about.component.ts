@@ -9,7 +9,7 @@ import { InfoEquipo } from 'src/app/interfaces/info-equipo.interface';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private _ips: InfoPaginaService ) {}
+  constructor(public _ips: InfoPaginaService ) {}
 
   ngOnInit() {
   }
