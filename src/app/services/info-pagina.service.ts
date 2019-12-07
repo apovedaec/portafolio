@@ -8,8 +8,8 @@ import { InfoEquipo } from '../interfaces/info-equipo.interface';
 })
 export class InfoPaginaService {
 
-  info: InfoPagina[] = [];
-  infoEquipo: InfoEquipo[] = [];
+  info: InfoPagina;
+  infoEquipo: InfoEquipo;
   cargado = false;
 
   constructor(private http: HttpClient ) {
@@ -18,14 +18,14 @@ export class InfoPaginaService {
   }
 
   private cargarInfo() {
-    this.http.get('assets/data/data-pagina.json').subscribe((resp: InfoPagina[]) => {
+    this.http.get('assets/data/data-pagina.json').subscribe((resp: InfoPagina) => {
         this.cargado = true;
         this.info = resp;
     });
   }
 
   private cargarEquipo() {
-    this.http.get('https://angular-html-3cc97.firebaseio.com/equipo.json').subscribe((resp: InfoEquipo[]) => {
+    this.http.get('https://angular-html-3cc97.firebaseio.com/equipo.json').subscribe((resp: InfoEquipo) => {
         this.cargado = true;
         this.infoEquipo = resp;
     });
